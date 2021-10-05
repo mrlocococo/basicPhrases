@@ -2,6 +2,7 @@ package com.example.basicphrases;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
         Button buttonPressed = (Button) view;
 
         Log.i("Button pressed", buttonPressed.getTag().toString());
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, getResources().getIdentifier(buttonPressed.getTag().toString(), "raw", getPackageName()));
+
+        mediaPlayer.start();
 
     }
 
